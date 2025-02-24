@@ -57,6 +57,11 @@ public class WeaponHandler : MonoBehaviour
     // SpriteRenderer 컴포넌트 참조
     private SpriteRenderer weaponRenderer;
 
+    protected virtual void Start()
+    {
+
+    }
+
     // 초기화 메서드
     protected virtual void Awake()
     {
