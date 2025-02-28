@@ -17,7 +17,6 @@ public class PlayerCharacter : MonoBehaviour
             Debug.LogWarning("선택된 캐릭터 데이터가 없습니다.");
         }
     }
-
     public void SetCharacter(CharacterData newCharacter)
     {
         if (newCharacter == null)
@@ -31,6 +30,7 @@ public class PlayerCharacter : MonoBehaviour
             Debug.LogError("PlayerCharacter: SpriteRenderer가 설정되지 않았습니다!");
             return;
         }
+
 
         // 애니메이션 비활성 후 스프라이트 변경
         if (animator != null)
@@ -50,6 +50,9 @@ public class PlayerCharacter : MonoBehaviour
         {
             Debug.LogWarning("AnimatorOverrideController가 설정되지 않았습니다.");
         }
+
+        // 선택된 캐릭터 데이터를 CharacterSelector에 저장
+        CharacterSelector.Instance.SelectedCharacterData = newCharacter;
 
         // 잠시 후 애니메이터 다시 활성화(애니메이션 적용)
         StartCoroutine(ReenableAnimator());

@@ -15,6 +15,13 @@ public class CharacterColorChanger : MonoBehaviour
 
     void Start()
     {
+
+        // CharacterSelector를 통해 선택된 캐릭터 데이터를 가져옴
+        if (CharacterSelector.Instance != null && CharacterSelector.Instance.SelectedCharacterData != null)
+        {
+            characterSprite.sprite = CharacterSelector.Instance.SelectedCharacterData.characterSprite;
+        }
+
         characterPreviewImage.sprite = characterSprite.sprite;
 
         //  초기 색상을 characterSprite의 material.color에서 가져옴
